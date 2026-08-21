@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "little-chaos-runtime"
+version = "0.1.0"
+description = "High-level execution runtime for LittleChaos above GR00T + SONIC"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+live = ["numpy", "pyzmq"]
+dev = ["pytest"]
+
+[project.scripts]
+little-chaos = "little_chaos.cli.shell:main"
+
+[tool.setuptools.packages.find]
+include = ["little_chaos*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
