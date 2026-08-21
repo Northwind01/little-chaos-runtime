@@ -76,7 +76,7 @@ On each transition: cancel the previous producer, set `NONE` (drop stale packets
 
 `little_chaos/planner/` — `MockPlanner` / `VestaPlanner`, structured JSON parse
 
-`little_chaos/skills/` — registry and executors (`vla.find_girl`, `vla.go_to_girl`, `locomotion.walk|stop|retreat|turn_around`)
+`little_chaos/skills/` — registry and executors (`vla.find_girl`, `vla.go_to_girl`, `locomotion.walk|stop|retreat|turn_around`). See [adding_a_skill.md](adding_a_skill.md) to extend.
 
 `little_chaos/backends/` — `GrootClient`, `SonicClient`, `SonicCommandGateway`
 
@@ -118,6 +118,8 @@ Registered names (see `:skills` in the shell). Planner output must use these exa
 `locomotion.retreat` `distance_m` is required and clamped to `[RETREAT_MIN_M, RETREAT_MAX_M]` (default 0.1–1.0).
 
 VLA skills do not self-declare success; the success detector does. Collision or fallen veto aborts locomotion.
+
+To add a skill: [adding_a_skill.md](adding_a_skill.md).
 
 ## How to run
 
